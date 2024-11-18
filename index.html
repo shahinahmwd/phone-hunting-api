@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone-hunting-api</title>
+    <!-- tailwind and daisyUi cdn -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <header>
+        <h3 class="text-3xl">Phone Hunting</h3>
+    </header>
+    <main class="container mx-auto">
+        <section class="m-4 p-4 bg-gray-100">
+            <input id="search-filed" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs mr-2" />
+            <button onclick="handleSearch ()" class="btn btn-accent mr-2">Search</button>
+            <input id="search-filed2" type="text" placeholder="Search hear" class="input input-bordered w-full max-w-xs mr-2" />
+            <button onclick="handleSearch2 ()" class="btn btn-accent">Search</button>
+        </section>
+        <!-- search result -->
+        <section class="my-10 ">
+            <!-- loading or spinner -->
+             <div id="loading-spinner" class="my-40 text-center hidden">
+                <span class="loading loading-spinner text-info"></span>
+             </div>
+            <div id="phone_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            </div>
+            <!-- show all button -->
+             <div id="show-all-container" class="hidden">
+                <button class="btn btn-accent">Show All</button>
+             </div>
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="js/phone-hunting.js"></script>
+</body>
+</html>
