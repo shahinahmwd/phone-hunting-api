@@ -9,34 +9,52 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
     <header>
         <h3 class="text-3xl">Phone Hunting</h3>
     </header>
     <main class="container mx-auto">
         <section class="m-4 p-4 bg-gray-100">
-            <input id="search-filed" type="text" placeholder="Search..." class="input input-bordered w-full max-w-xs mr-2" />
+            <input id="search-filed" type="text" placeholder="Search..."
+                class="input input-bordered w-full max-w-xs mr-2" />
             <button onclick="handleSearch ()" class="btn btn-accent mr-2">Search</button>
-            <input id="search-filed2" type="text" placeholder="Search hear" class="input input-bordered w-full max-w-xs mr-2" />
-            <button onclick="handleSearch2 ()" class="btn btn-accent">Search</button>
+            <!-- <input id="search-filed2" type="text" placeholder="Search hear" class="input input-bordered w-full max-w-xs mr-2" />
+            <button onclick="handleSearch2 ()" class="btn btn-accent">Search</button> -->
         </section>
         <!-- search result -->
-        <section class="my-10 ">
+        <section class="my-10 px-10">
             <!-- loading or spinner -->
-             <div id="loading-spinner" class="my-40 text-center hidden">
+            <div id="loading-spinner" class="my-10 text-center hidden">
                 <span class="loading loading-spinner text-info"></span>
-             </div>
+            </div>
             <div id="phone_container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             </div>
             <!-- show all button -->
-             <div id="show-all-container" class="hidden">
-                <button class="btn btn-accent">Show All</button>
-             </div>
+            <div id="show-all-container" class="hidden text-center mt-6">
+                <button onclick="handleShowAll ()" class="btn btn-accent">Show All</button>
+            </div>
         </section>
+        <!-- show Details modal -->
+        <!-- Open the modal using ID.showModal() method -->
+        <dialog id="show_details_modal" class="modal">
+            <div class="modal-box">
+                <h3 id="show-details-phone-name" class="text-lg font-bold"></h3>
+                <div id="show-detail-container">
+
+                </div>
+                <div class="modal-action">
+                    <form method="dialog">
+                        <!-- if there is a button in form, it will close the modal -->
+                        <button class="btn">Close</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
     </main>
     <footer>
-
     </footer>
     <script src="js/phone-hunting.js"></script>
 </body>
+
 </html>
